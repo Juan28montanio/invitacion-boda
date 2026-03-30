@@ -100,11 +100,11 @@ export default function WeddingInvite() {
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
 
       {/* DECORACIÓN GLOBAL */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-30"></div>
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-30 pointer-events-none"></div>
 
       {/* FLORES ACUARELA PREMIUM (sin opacidad animada) */}
       <motion.img
-        src="/images/flowers1.jpg"
+        src="/images/flowers1.png"
         className="absolute top-0 left-0 w-72 opacity-70 pointer-events-none"
         initial={{ y: -20 }}
         animate={{ y: [0, -8, 0] }}
@@ -112,7 +112,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers2.jpg"
+        src="/images/flowers2.png"
         className="absolute top-1/3 right-0 w-64 opacity-70 pointer-events-none rotate-12"
         initial={{ y: 20 }}
         animate={{ y: [0, 10, 0] }}
@@ -120,7 +120,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers3.jpg"
+        src="/images/flowers3.png"
         className="absolute bottom-0 left-10 w-60 opacity-70 pointer-events-none -rotate-12"
         initial={{ y: 15 }}
         animate={{ y: [0, -6, 0] }}
@@ -128,7 +128,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers4.jpg"
+        src="/images/flowers4.png"
         className="absolute bottom-20 right-10 w-56 opacity-70 pointer-events-none rotate-180"
         initial={{ y: -15 }}
         animate={{ y: [0, 8, 0] }}
