@@ -104,7 +104,7 @@ export default function WeddingInvite() {
 
       {/* FLORES ACUARELA PREMIUM (sin opacidad animada) */}
       <motion.img
-        src="/images/flowers1.png"
+        src="/images/flowers1.jpg"
         className="absolute top-0 left-0 w-72 opacity-70 pointer-events-none"
         initial={{ y: -20 }}
         animate={{ y: [0, -8, 0] }}
@@ -112,7 +112,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers2.png"
+        src="/images/flowers2.jpg"
         className="absolute top-1/3 right-0 w-64 opacity-70 pointer-events-none rotate-12"
         initial={{ y: 20 }}
         animate={{ y: [0, 10, 0] }}
@@ -120,7 +120,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers3.png"
+        src="/images/flowers3.jpg"
         className="absolute bottom-0 left-10 w-60 opacity-70 pointer-events-none -rotate-12"
         initial={{ y: 15 }}
         animate={{ y: [0, -6, 0] }}
@@ -128,7 +128,7 @@ export default function WeddingInvite() {
       />
 
       <motion.img
-        src="/images/flowers4.png"
+        src="/images/flowers4.jpg"
         className="absolute bottom-20 right-10 w-56 opacity-70 pointer-events-none rotate-180"
         initial={{ y: -15 }}
         animate={{ y: [0, 8, 0] }}
