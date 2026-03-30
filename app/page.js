@@ -90,8 +90,8 @@ export default function WeddingInvite() {
   };
 
   const fadeUp = {
-    hidden: { opacity: 1, y: 40 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { y: 40 },
+    visible: { y: 0 },
   };
 
   return (
@@ -100,71 +100,40 @@ export default function WeddingInvite() {
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
 
       {/* DECORACIÓN GLOBAL */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-40"></div>
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-30"></div>
 
-      {/* FLORES DECORATIVAS PREMIUM */}
-      <motion.img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-watercolor-floral-decoration-png-image_10211518.png" className="absolute top-0 left-0 w-72 opacity-70 pointer-events-none"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 0.7, y: 0 }}
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
+      {/* FLORES ACUARELA PREMIUM (sin opacidad animada) */}
+      <motion.img
+        src="/images/flowers1.png"
+        className="absolute top-0 left-0 w-72 opacity-70 pointer-events-none"
+        initial={{ y: -20 }}
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
       />
-      <motion.img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-watercolor-floral-decoration-png-image_10211518.png" className="absolute bottom-0 right-0 w-72 rotate-180 opacity-70 pointer-events-none"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 0.7, y: 0 }}
+
+      <motion.img
+        src="/images/flowers2.png"
+        className="absolute top-1/3 right-0 w-64 opacity-70 pointer-events-none rotate-12"
+        initial={{ y: 20 }}
         animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
+        transition={{ duration: 9, repeat: Infinity }}
       />
 
-      {/* DETALLES DORADOS */}
-      <motion.img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-golden-leaves-decoration-png-image_10211480.png" className="absolute top-20 right-10 w-40 opacity-60 pointer-events-none"
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 0.6, x: 0 }}
-        animate={{ rotate: [0, 2, -2, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-golden-leaves-decoration-png-image_10211480.png" className="absolute bottom-20 left-10 w-40 rotate-180 opacity-60 pointer-events-none"
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 0.6, x: 0 }}
-        animate={{ rotate: [0, -2, 2, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+      <motion.img
+        src="/images/flowers3.png"
+        className="absolute bottom-0 left-10 w-60 opacity-70 pointer-events-none -rotate-12"
+        initial={{ y: 15 }}
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
       />
 
-      {/* OVERLAY SUAVE PARA DAR PROFUNDIDAD */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#f6efe7]/40 to-[#f6efe7]"></div>
-
-      {/* ✨ PARTÍCULAS DORADAS (modo lujo) */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {[...Array(18)].map((_, i) => (
-          <span
-            key={i}
-            className="absolute w-1.5 h-1.5 bg-[#D4AF37] rounded-full opacity-60"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float${i % 3} ${6 + (i % 5)}s ease-in-out infinite`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* ✨ BRILLO SUAVE EN PORTADA */}
-      <motion.div
-        className="pointer-events-none absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 0.6, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        style={{
-          background: "radial-gradient(circle at 30% 20%, rgba(255,215,0,0.25), transparent 40%), radial-gradient(circle at 70% 60%, rgba(255,215,0,0.2), transparent 40%)",
-        }}
+      <motion.img
+        src="/images/flowers4.png"
+        className="absolute bottom-20 right-10 w-56 opacity-70 pointer-events-none rotate-180"
+        initial={{ y: -15 }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 11, repeat: Infinity }}
       />
-
-      {/* Animaciones CSS */}
-      <style jsx global>{`
-        @keyframes float0 { 0%,100%{transform: translateY(0)} 50%{transform: translateY(-10px)} }
-        @keyframes float1 { 0%,100%{transform: translateY(0)} 50%{transform: translateY(12px)} }
-        @keyframes float2 { 0%,100%{transform: translateY(0)} 50%{transform: translateY(-6px)} }
-      `}</style>
 
       {/* MÚSICA */}
       <audio id="music" loop>
@@ -192,7 +161,7 @@ export default function WeddingInvite() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative z-10 text-white"
         >
           <h1 className="text-7xl md:text-9xl font-light tracking-[0.4em]" style={{ fontFamily: "Great Vibes" }}>
@@ -213,7 +182,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* INVITACIÓN */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" className="p-8 max-w-2xl mx-auto">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="p-8 max-w-2xl mx-auto">
         <div className="bg-white/80 rounded-3xl shadow-xl p-8 border border-[#d6c3a3]">
           <p className="italic">“No es bueno que el hombre esté solo…” – Génesis 2,18</p>
 
@@ -234,7 +203,7 @@ export default function WeddingInvite() {
       </motion.section>
 
       {/* GALERÍA */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" className="p-10">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="p-10">
         <h2 className="text-3xl mb-6">Nuestra historia</h2>
         <div ref={carouselRef} onMouseEnter={pauseScroll} onMouseLeave={resumeScroll} className="flex gap-6 overflow-x-auto snap-x px-4">
           {gallery.map((img, i) => (
@@ -244,7 +213,7 @@ export default function WeddingInvite() {
       </motion.section>
 
       {/* CONFIRMACIÓN */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" className="p-10">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="p-10">
         <h2 className="text-3xl mb-6">Confirmación de asistencia</h2>
         <div className="bg-white/80 rounded-3xl shadow-xl p-6 border border-[#d6c3a3] inline-block">
           <p className="mb-4 text-sm italic">Por favor confirma tu asistencia antes del evento</p>
@@ -264,7 +233,7 @@ export default function WeddingInvite() {
       </motion.section>
 
       {/* VALIDACIÓN */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" className="p-8">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="p-8">
         <div className="bg-white/80 rounded-2xl p-6 inline-block shadow">
           <h2 className="text-2xl mb-4">Validación de invitados</h2>
           <input type="text" placeholder="Ingresa tu nombre" value={name} onChange={(e) => setName(e.target.value)} className="border p-3 rounded-xl" />
@@ -276,7 +245,7 @@ export default function WeddingInvite() {
       </motion.section>
 
       {/* FINAL */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" className="p-10">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }} className="p-10">
         <p className="italic max-w-xl mx-auto">¡Tu presencia es el mayor regalo! Gracias por acompañarnos en este momento tan especial.</p>
       </motion.section>
 
