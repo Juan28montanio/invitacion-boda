@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
-export const metadata = {
-  title: "Juan & Verónica - Nos casamos 💍",
-  description: "Con mucha alegría queremos invitarte a nuestro matrimonio. Acompáñanos en este momento tan especial.",
+export const metadata: Metadata = {
+  title: "Juan & Verónica | Ceremonia de matrimonio",
+  description:
+    "Acompáñanos en la ceremonia religiosa de nuestro matrimonio en la Parroquia San Juan Bosco.",
   openGraph: {
-    title: "Juan & Verónica - Nos casamos 💍",
-    description: "Con mucha alegría queremos invitarte a nuestro matrimonio.",
+    title: "Juan & Verónica | Ceremonia de matrimonio",
+    description:
+      "Acompáñanos en la ceremonia religiosa de nuestro matrimonio en la Parroquia San Juan Bosco.",
     url: "https://invitacion-boda.vercel.app",
     siteName: "Invitación de Boda",
+    locale: "es_CO",
+    type: "website",
     images: [
       {
         url: "https://invitacion-boda.vercel.app/images/portada.png",
@@ -17,21 +21,26 @@ export const metadata = {
         height: 630,
       },
     ],
-    locale: "es_CO",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan & Verónica | Ceremonia de matrimonio",
+    description:
+      "Acompáñanos en la ceremonia religiosa de nuestro matrimonio en la Parroquia San Juan Bosco.",
+    images: ["https://invitacion-boda.vercel.app/images/portada.png"],
   },
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
-
 
 export default function RootLayout({
   children,
@@ -40,8 +49,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="es"
+      className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
